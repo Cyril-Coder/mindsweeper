@@ -1,4 +1,4 @@
-# TODO: start grid (uncovered grid) + timer + score
+# TODO: start grid (uncovered grid) + timer + score + add visual ith kivy
 import random
 
 # Generate the board 
