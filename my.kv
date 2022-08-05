@@ -1,0 +1,51 @@
+WindowManager:
+    MainWindow:
+    SecondWindow:
+
+<Button>:
+    font_size: 40
+    background_color: 0.6941,0.3373,0.2235,1
+    color: 1,1,1,1
+    size_hint: 0.25,0.1
+    
+<MainWindow>:
+    name: "main"
+    FloatLayout:
+
+        canvas:
+            Color:
+                rgb: 1,0.7592,0.9922,1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Button:
+            text: "Play"
+            pos_hint: {"x":0.4, "top":0.4}
+            on_release: 
+                app.root.current = "second"
+                root.manager.transition.direction = "left"
+
+        Button:
+            id: btnExit
+            text:"Exit" 
+            pos_hint: {"x":0.4, "top":0.3}
+            on_release: 
+                app.stop()
+
+        Label:
+            background_color: 1,1,1,1
+            text: "Minesweeper" 
+            pos_hint: {"x":0.275, "top":0.8}
+            size_hint: 0.5,0.15
+            font_size: 70
+
+
+<SecondWindow>:
+    name: "second"
+    Button:
+        text: "Go Back"
+        on_release:
+            app.root.current = "main"
+            root.manager.transition.direction = "right"
+
